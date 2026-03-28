@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลีลาศ_Tepleela</title>
+    <link rel="icon" href="src/tepleela.png" type="image/png">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>💃Foot mark ทักษะลีลาศจังหวะชะชะช่า</h1>
+    <p>ลากคำตอบไปวาง แล้วกด "ส่งคำตอบ"</p>
+</header>
+
+<div class="form">
+    <input type="text" id="name" placeholder="ชื่อ - สกุล">
+    <input type="text" id="classroom" placeholder="ชั้น">
+    <input type="text" id="number" placeholder="เลขที่">
+</div>
+
+<div class="score-board">
+    คะแนน: <span id="score">0</span> / 10
+</div>
+
+<div class="progress">
+    <div id="bar"></div>
+</div>
+
+<div class="container">
+
+    <div class="images">
+        <div class="img-box" data-match="1"><img src="src/Basic Walk(M).jpg"></div>
+        <div class="img-box" data-match="2"><img src="src/Basic Walk(W).png"></div>
+        <div class="img-box" data-match="3"><img src="src/Fan(W).jpg"></div>
+        <div class="img-box" data-match="4"><img src="src/Fan Hockey Stick(M).png"></div>
+        <div class="img-box" data-match="5"><img src="src/Hockey Stick(W).jpg"></div>
+    </div>
+
+    <div class="texts">
+        <div class="text-box" draggable="true" data-match="2">Basic Walk (W)</div>
+        <div class="text-box" draggable="true" data-match="1">Basic Walk (M)</div>
+        <div class="text-box" draggable="true" data-match="3">Fan (W)</div>
+        <div class="text-box" draggable="true" data-match="5">Hockey Stick (W)</div>
+        <div class="text-box" draggable="true" data-match="4">Fan Hockey Stick (M)</div>
+    </div>
+
+</div>
+
+<button onclick="checkAnswer()" class="submit-btn">ส่งคำตอบ</button>
+<button onclick="showResults()" class="submit-btn">📊 ดูผลคะแนน</button>
+<button onclick="openPopup()" class="submit-btn">🗑️ ล้างข้อมูล</button>
+
+<!-- ตาราง -->
+<div id="resultArea"></div>
+<!-- 🔒 popup ใส่รหัส -->
+<div id="passwordPopup" class="popup">
+    <div class="popup-box">
+        <h2>🔒 ใส่รหัสเพื่อล้างข้อมูล</h2>
+        <input type="password" id="adminPass" placeholder="กรอกรหัส">
+        <br><br>
+        <button onclick="confirmClear()">ยืนยัน</button>
+        <button onclick="closePopup()">ยกเลิก</button>
+    </div>
+</div>
+
+<script src="src/script.js"></script>
+
+</body>
+</html>

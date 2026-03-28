@@ -1,0 +1,245 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Sarabun", sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #ff4da6, #ff99cc);
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    box-shadow: 0 4px 20px rgba(255, 77, 166, 0.6);
+}
+
+/* SCORE */
+.score-board {
+    text-align: center;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    margin-top: 10px;
+}
+
+/* PROGRESS BAR */
+.progress {
+    width: 80%;
+    height: 18px;
+    background: #333;
+    margin: 10px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff4da6, #ff99cc);
+    transition: 0.4s;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* COLUMN */
+.images, .texts {
+    width: 48%;
+}
+
+/* IMAGE BOX */
+.img-box {
+    border: 2px dashed #ff4da6;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 8px;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.img-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #ff4da6;
+}
+
+/* IMAGE */
+.img-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* TEXT BOX */
+.text-box {
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    color: #ff99cc;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: grab;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.text-box:hover {
+    transform: scale(1.05);
+    border-color: #ff4da6;
+    box-shadow: 0 0 15px #ff4da6;
+}
+
+.text-box:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+/* CORRECT */
+.correct {
+    background: linear-gradient(135deg, #28a745, #4cd964) !important;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* WRONG */
+.wrong {
+    animation: shake 0.3s;
+}
+
+/* SHAKE */
+@keyframes shake {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(-5px);}
+    50% {transform: translateX(5px);}
+    75% {transform: translateX(-5px);}
+    100% {transform: translateX(0);}
+}
+
+/* FORM */
+.form {
+    text-align: center;
+    margin: 20px;
+}
+
+.form input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #ff4da6;
+    background: #111;
+    color: white;
+    transition: 0.2s;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #ff99cc;
+    box-shadow: 0 0 10px #ff4da6;
+}
+
+/* BUTTON */
+.submit-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, #ff4da6, #ff99cc);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff4da6;
+}
+
+/* TABLE */
+#resultArea table {
+    width: 90%;
+    font-size: 1.1rem;
+    border-collapse: collapse;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#resultArea th,
+#resultArea td {
+    padding: 12px;
+    border: 1px solid #ff4da6;
+}
+
+#resultArea th {
+    background: #ff4da6;
+    color: black;
+}
+
+#resultArea td {
+    background: #1a1a1a;
+}
+
+#resultArea tr:hover {
+    background: #333;
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.popup-box {
+    background: #1a1a1a;
+    color: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 10% auto;
+    border: 2px solid #ff4da6;
+    box-shadow: 0 0 20px #ff4da6;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-box input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ff4da6;
+    background: black;
+    color: white;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .images, .texts {
+        width: 100%;
+    }
+}
